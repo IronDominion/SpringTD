@@ -61,13 +61,13 @@ function widget:Update(delta)
   if progress > 1 then
     progress = progress - 2
   end
-  
+
   if progress >= 0 then
     Spring.SetSunDirection(math.sin((progress - 0.5) * math.pi), math.cos((progress - 0.5) * math.pi), 0.5)
   else
     Spring.SetSunDirection(math.sin((progress + 0.5) * math.pi), math.cos((progress + 0.5) * math.pi), 0.5)
   end
-  
+
   local color = {getColor(1), getColor(2), getColor(2)}
   Spring.SetSunLighting({groundAmbientColor = color, groundDiffuseColor = color, unitAmbientColor = color, unitDiffuseColor = color})
 end
