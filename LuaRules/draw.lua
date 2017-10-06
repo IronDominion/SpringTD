@@ -17,6 +17,6 @@
 --	51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 --
 
-Spring.Echo("Loading synced gadgets")
+Spring.Echo("Loading unsynced gadgets")
 VFS.Include("LuaGadgets/gadgets.lua",nil, VFS.BASE)
-Spring.Echo("Loaded synced gadgets")
+Spring.Echo("Loaded unsynced gadgets")
