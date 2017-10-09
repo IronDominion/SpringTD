@@ -6,7 +6,7 @@ local unitDef =
 	BuildPic = "base.bmp",
 	Category = "BUILDING NOTSCOUT NOTHEAVY NOTAIR NOTEPIC NOTSHIP NOTSTEALTHY ALL",
 	ObjectName = "base2.s3o",
-	Side = "TANK",
+	Side = "GDI",
 	TEDClass = "PLANT",
 	script = "basescript.lua",
 	
@@ -16,7 +16,7 @@ local unitDef =
     commander = true,
 	Description = "Produces units",
 	MaxDamage = 1500,
-	Name = "Base",
+	Name = "Construction Yard",
 	RadarDistance = 0,
 	SightDistance = 400,
 	SoundCategory = "BUILDING",
@@ -50,7 +50,7 @@ local unitDef =
 		"tank",
 		"apc",
 		"humvee",
-		"4tnk",
+		"mammoth_tank",
 		"builder",
 	},
 	

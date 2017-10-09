@@ -6,23 +6,23 @@ local unitDef  =  {
     Category = "TANK SMALL NOTAIR NOTSUB",
     ObjectName = "humvee.s3o",
     name = "Humvee",
-    Side = "TANKS",
+    Side = "GDI",
     TEDClass = "TANK",
     UnitName = "humvee",
-    script = "tankscript.lua",
+    script = "humvee_script.lua",
     
 --Unit limitations and properties
-    BuildTime = 1000,
-    Description = "A generic tank unit.",
-    MaxDamage = 800,
+    BuildTime = 800,
+    Description = "Fast scouting vehicle, capable of shredding infantry.",
+    MaxDamage = 150,
     RadarDistance = 0,
-    SightDistance = 800,
+    SightDistance = 1400,
     SoundCategory = "TANK",
     Upright = 0,
     
 --Energy and metal related
-    BuildCostEnergy = 100,
-    BuildCostMetal = 0,
+    BuildCostEnergy = 0,
+    BuildCostMetal = 400,
     
 --Pathfinding and related
     Acceleration = 0.15,
@@ -30,9 +30,9 @@ local unitDef  =  {
     FootprintX = 2,
     FootprintZ = 2,
     MaxSlope = 15,
-    MaxVelocity = 2.0,
+    MaxVelocity = 1.5,
     MaxWaterDepth = 20,
-    MovementClass = "Default2x2",
+    MovementClass = "Default1x1",
     TurnRate = 700,
     
 --Abilities
@@ -58,17 +58,20 @@ local unitDef  =  {
 
     weapons = {
         [1] = {
-            def = "orangeblob",
+            def = "m60",
         },
     },
 }
 
 local weaponDefs = {
-    orangeblob = {
-		name = "Orange Plasma Cannon",
+    m60 = {
+		name = "m60",
 		weapontype = "Cannon",
-		accuracy = 10,
-		areaofeffect = 100,
+		accuracy = 75,
+		burst = 5,
+		burstRate = 0.1,
+		sprayAngle = 10,
+		areaofeffect = 25,
 		avoidfeature = false,
 		avoidfriendly = true,
 		canattackground = true,
@@ -83,7 +86,7 @@ local weaponDefs = {
 		impulsefactor = 0,
 		intensity = 1,
 		noselfdamage = true,
-		size = 4,
+		size = 1,
 --        soundstart = "tank_fire",
         soundhit = "orangeblob_explo",
 		range = 450,
@@ -95,7 +98,7 @@ local weaponDefs = {
 		explosiongenerator = "custom:TANKGUN_FX",
 		damage =
 		{
-			default = 100,
+			default = 5,	
 		},
 	},
 }

@@ -1,39 +1,39 @@
-local unitName  =  "4tnk"
+local unitName  =  "tank"
 
 local unitDef  =  {
 --Internal settings
     BuildPic = "filename.bmp",
     Category = "TANK SMALL NOTAIR NOTSUB",
-    ObjectName = "4tnk.s3o",
-    name = "Mammoth Tank",
-    Side = "TANKS",
+    ObjectName = "testy.s3o",
+    name = "Medium Tank",
+    Side = "GDI",
     TEDClass = "TANK",
-    UnitName = "4tnk",
+    UnitName = "tank",
     script = "tankscript.lua",
     
 --Unit limitations and properties
-    BuildTime = 1000,
-    Description = "A generic tank unit.",
-    MaxDamage = 1600,
+    BuildTime = 1600,
+    Description = "All rounded GDI vehicle.",
+    MaxDamage = 800,
     RadarDistance = 0,
-    SightDistance = 1000,
+    SightDistance = 800,
     SoundCategory = "TANK",
     Upright = 0,
     
 --Energy and metal related
-    BuildCostEnergy = 100,
-    BuildCostMetal = 0,
+    BuildCostEnergy = 0,
+    BuildCostMetal = 800,
     
 --Pathfinding and related
-    Acceleration = 0.10,
-    BrakeRate = 0.05,
+    Acceleration = 0.15,
+    BrakeRate = 0.1,
     FootprintX = 2,
     FootprintZ = 2,
     MaxSlope = 15,
-    MaxVelocity = 1.5,
+    MaxVelocity = 2.0,
     MaxWaterDepth = 20,
     MovementClass = "Default2x2",
-    TurnRate = 400,
+    TurnRate = 700,
     
 --Abilities
     Builder = 0,
@@ -58,14 +58,14 @@ local unitDef  =  {
 
     weapons = {
         [1] = {
-            def = "orangeblob",
+            def = "g120mm",
         },
     },
 }
 
 local weaponDefs = {
-    orangeblob = {
-		name = "Orange Plasma Cannon",
+    g120mm = {
+		name = "120mm",
 		weapontype = "Cannon",
 		accuracy = 10,
 		areaofeffect = 100,
@@ -86,8 +86,8 @@ local weaponDefs = {
 		size = 4,
 --        soundstart = "tank_fire",
         soundhit = "orangeblob_explo",
-		range = 450,
-		reloadtime = 1.5,
+		range = 475,
+		reloadtime = 2.5,
 		rgbcolor = "1.0 1.0 1.0",
 		turret = true,
 		texture1 = "flame",
@@ -95,7 +95,7 @@ local weaponDefs = {
 		explosiongenerator = "custom:TANKGUN_FX",
 		damage =
 		{
-			default = 100,
+			default = 75,		
 		},
 	},
 }

@@ -6,23 +6,23 @@ local unitDef  =  {
     Category = "TANK SMALL NOTAIR NOTSUB",
     ObjectName = "apc.s3o",
     name = "Generic APC",
-    Side = "TANKS",
+    Side = "GDI",
     TEDClass = "TANK",
     UnitName = "apc",
-    script = "tankscript.lua",
+    script = "humvee_script.lua",
     
 --Unit limitations and properties
-    BuildTime = 1000,
-    Description = "A generic apc unit.",
-    MaxDamage = 800,
+    BuildTime = 1500,
+    Description = "Armored personel carrier.",
+    MaxDamage = 400,
     RadarDistance = 0,
     SightDistance = 800,
     SoundCategory = "TANK",
     Upright = 0,
     
 --Energy and metal related
-    BuildCostEnergy = 100,
-    BuildCostMetal = 0,
+    BuildCostEnergy = 0,
+    BuildCostMetal = 750,
     
 --Pathfinding and related
     Acceleration = 0.20,
@@ -58,19 +58,20 @@ local unitDef  =  {
 
     weapons = {
         [1] = {
-            def = "orangeblob2",
+            def = "m60a",
         },
     },
 }
 
 local weaponDefs = {
-    orangeblob2 = {
-		name = "Orange Auto Cannon",
+    m60a = {
+		name = "m60a",
 		weapontype = "Cannon",
-		accuracy = 15,
-		burst = 10,
-		areaofeffect = 0,
-		groundBounce = true,
+		accuracy = 75,
+		burst = 5,
+		burstRate = 0.1,
+		sprayAngle = 10,
+		areaofeffect = 25,
 		avoidfeature = false,
 		avoidfriendly = true,
 		canattackground = true,
@@ -85,11 +86,11 @@ local weaponDefs = {
 		impulsefactor = 0,
 		intensity = 1,
 		noselfdamage = true,
-		size = 4,
+		size = 1,
 --        soundstart = "tank_fire",
         soundhit = "orangeblob_explo",
 		range = 450,
-		reloadtime = 3.25,
+		reloadtime = 1.5,
 		rgbcolor = "1.0 1.0 1.0",
 		turret = true,
 		texture1 = "flame",
@@ -97,7 +98,7 @@ local weaponDefs = {
 		explosiongenerator = "custom:TANKGUN_FX",
 		damage =
 		{
-			default = 20,
+			default = 7,	
 		},
 	},
 }

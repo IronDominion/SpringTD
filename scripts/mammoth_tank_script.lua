@@ -1,12 +1,8 @@
 local base = piece "base"
 local body = piece "body"
 local turret = piece "turret"
-local gun = piece "gun"
-local flare = piece "flare"
-local wheel_fl = piece "wheel_fl"
-local wheel_fr = piece "wheel_fr"
-local wheel_bl = piece "wheel_bl"
-local wheel_br = piece "wheel_br"
+local gun1 = piece "gun1"
+local gun2 = piece "gun2"
 -- declares all the pieces we'll use in the script.
 
 local SIG_AIM = 2
@@ -22,7 +18,8 @@ local function RestoreAfterDelay(unitID)
     -- defines a local funtion to wait a bit, then move the turret back to how it was originally.
 	Sleep(RESTORE_DELAY)
 	Turn(turret, y_axis, 0, math.rad(35))
-	Turn(gun, x_axis, 0, math.rad(30))
+	Turn(gun1, x_axis, 0, math.rad(30))
+	Turn(gun2, x_axis, 0, math.rad(30))
 end
 
 function script.AimWeapon(weaponID, heading, pitch)
@@ -30,21 +27,23 @@ function script.AimWeapon(weaponID, heading, pitch)
 	SetSignalMask(SIG_AIM)
     -- each time the Signal is called, all other functions with the same SignalMask will stop running. This makes sure the tank isn't trying to fire at something, and restore the turret position, at the same time.
 	Turn(turret, y_axis, heading, math.rad(35))
-	Turn(gun, x_axis, -pitch, math.rad(30))
+	Turn(gun1, x_axis, -pitch, math.rad(30))
 	WaitForTurn(turret, y_axis)
-	WaitForTurn(gun, x_axis)
+	WaitForTurn(gun1, x_axis)
+	Turn(gun2, x_axis, -pitch, math.rad(30))
+	WaitForTurn(gun2, x_axis)
 	StartThread(RestoreAfterDelay)
 	return true
 end
 
-function script.FireWeapon(weaponID)
-	EmitSfx(flare, 0)
-end
+--function script.FireWeapon(weaponID)
+--	EmitSfx(flare, 0)
+--end
 
-function script.QueryWeapon() return flare end
+--function script.QueryWeapon() return flare end
 -- The piece that the bullet/laser/whatever comes out of.
 
-function script.AimFromWeapon() return gun end
+function script.AimFromWeapon() return gun1 end
 -- The unit looks from this piece down the QueryWeapon piece, to see whether it's aiming at anything.
 
 function script.Killed(recentDamage, maxHealth)

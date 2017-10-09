@@ -1,6 +1,6 @@
 local sidedata = {
 	{
-	name = "TANKS",
+	name = "GDI",
 	startUnit = "base",
 	}
 }
