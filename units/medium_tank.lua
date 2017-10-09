@@ -4,7 +4,7 @@ local unitDef  =  {
 --Internal settings
     BuildPic = "filename.bmp",
     Category = "TANK SMALL NOTAIR NOTSUB",
-    ObjectName = "testy.s3o",
+    ObjectName = "medium_tank.s3o",
     name = "Medium Tank",
     Side = "GDI",
     TEDClass = "TANK",
