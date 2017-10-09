@@ -9,7 +9,7 @@ local unitDef  =  {
     Side = "GDI",
     TEDClass = "TANK",
     UnitName = "tank",
-    script = "tankscript.lua",
+    script = "medium_tank_script.lua",
     
 --Unit limitations and properties
     BuildTime = 1600,
