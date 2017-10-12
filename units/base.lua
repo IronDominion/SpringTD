@@ -6,7 +6,7 @@ local unitDef =
 	BuildPic = "base.bmp",
 	Category = "BUILDING NOTSCOUT NOTHEAVY NOTAIR NOTEPIC NOTSHIP NOTSTEALTHY ALL",
 	ObjectName = "base2.s3o",
-	Side = "GDI",
+	Side = "TANK",
 	TEDClass = "PLANT",
 	script = "basescript.lua",
 	
@@ -16,7 +16,7 @@ local unitDef =
     commander = true,
 	Description = "Produces units",
 	MaxDamage = 1500,
-	Name = "Construction Yard",
+	Name = "Base",
 	RadarDistance = 0,
 	SightDistance = 400,
 	SoundCategory = "BUILDING",
@@ -47,11 +47,14 @@ local unitDef =
 	CanBeAssisted = 0,
 	buildoptions = 
 	{
-		"tank",
-		"apc",
-		"humvee",
-		"mammoth_tank",
+		"gmcv",
+		"nmcv",
 		"builder",
+		"humvee",
+		"apc",
+		"medium_tank",
+		"mammoth_tank",
+		"orca",
 	},
 	
 -- Abilities new to Spring
