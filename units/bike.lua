@@ -1,19 +1,19 @@
-local unitName  =  "humvee"
+local unitName  =  "bike"
 
 local unitDef  =  {
 --Internal settings
-    BuildPic = "humvee.bmp",
+    BuildPic = "bike.bmp",
     Category = "TANK SMALL NOTAIR NOTSUB",
-    ObjectName = "humvee.s3o",
-    name = "Humvee",
-    Side = "GDI",
+    ObjectName = "bike.s3o",
+    name = "Recon Bike",
+    Side = "Nod",
     TEDClass = "TANK",
-    UnitName = "humvee",
-    script = "humvee_script.lua",
+    UnitName = "bike",
+    script = "bike_script.lua",
     
 --Unit limitations and properties
     BuildTime = 1000,
-    Description = "Light anti infantry vehicle.",
+    Description = "Light and fast anti armor vehicle.",
     MaxDamage = 800,
     RadarDistance = 0,
     SightDistance = 800,

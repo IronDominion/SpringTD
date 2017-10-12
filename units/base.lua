@@ -47,14 +47,22 @@ local unitDef =
 	CanBeAssisted = 0,
 	buildoptions = 
 	{
-		"gmcv",
-		"nmcv",
 		"builder",
+		"gmcv",
+		"gharvester",
 		"humvee",
 		"apc",
 		"medium_tank",
+		"sam",
+		"mlrs",
 		"mammoth_tank",
 		"orca",
+		"nmcv",
+		"nharvester",
+		"bike",
+		"buggy",
+		"light_tank",
+		"stealth_tank",
 	},
 	
 -- Abilities new to Spring

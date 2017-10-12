@@ -3,10 +3,10 @@ local unitName = "nmcv"
 local unitDef = 
 {
 -- Internal settings
-	BuildPic = "builder.bmp",
+	BuildPic = "nmcv.bmp",
 	Category = "MOBILE SCOUT NOTHEAVY NOTAIR NOTSHIP NOTEPIC NOTSTEALTHY ALL",
 	ObjectName = "nmcv.s3o",
-	Side = "TANKS",
+	Side = "Nod",
 	TEDClass = "TANK",
 	script = "builderscript.lua",
 	

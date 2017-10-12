@@ -1,36 +1,36 @@
-local unitName  =  "humvee"
+local unitName  =  "apc"
 
 local unitDef  =  {
 --Internal settings
-    BuildPic = "humvee.bmp",
+    BuildPic = "apc.bmp",
     Category = "TANK SMALL NOTAIR NOTSUB",
-    ObjectName = "humvee.s3o",
-    name = "Humvee",
+    ObjectName = "apc.s3o",
+    name = "APC",
     Side = "GDI",
     TEDClass = "TANK",
-    UnitName = "humvee",
-    script = "humvee_script.lua",
+    UnitName = "apc",
+    script = "medium_tank_script.lua",
     
 --Unit limitations and properties
-    BuildTime = 1000,
-    Description = "Light anti infantry vehicle.",
-    MaxDamage = 800,
+    BuildTime = 1500,
+    Description = "Armored personel carrier.",
+    MaxDamage = 400,
     RadarDistance = 0,
     SightDistance = 800,
     SoundCategory = "TANK",
     Upright = 0,
     
 --Energy and metal related
-    BuildCostEnergy = 100,
-    BuildCostMetal = 0,
+    BuildCostEnergy = 0,
+    BuildCostMetal = 750,
     
 --Pathfinding and related
-    Acceleration = 0.15,
+    Acceleration = 0.20,
     BrakeRate = 0.1,
     FootprintX = 2,
     FootprintZ = 2,
     MaxSlope = 15,
-    MaxVelocity = 2.0,
+    MaxVelocity = 2.1,
     MaxWaterDepth = 20,
     MovementClass = "Default2x2",
     TurnRate = 700,
@@ -58,17 +58,20 @@ local unitDef  =  {
 
     weapons = {
         [1] = {
-            def = "orangeblob",
+            def = "m60a",
         },
     },
 }
 
 local weaponDefs = {
-    orangeblob = {
-		name = "Orange Plasma Cannon",
+    m60a = {
+		name = "m60a",
 		weapontype = "Cannon",
-		accuracy = 10,
-		areaofeffect = 100,
+		accuracy = 75,
+		burst = 5,
+		burstRate = 0.1,
+		sprayAngle = 10,
+		areaofeffect = 25,
 		avoidfeature = false,
 		avoidfriendly = true,
 		canattackground = true,
@@ -83,7 +86,7 @@ local weaponDefs = {
 		impulsefactor = 0,
 		intensity = 1,
 		noselfdamage = true,
-		size = 4,
+		size = 1,
 --        soundstart = "tank_fire",
         soundhit = "orangeblob_explo",
 		range = 450,
@@ -95,7 +98,7 @@ local weaponDefs = {
 		explosiongenerator = "custom:TANKGUN_FX",
 		damage =
 		{
-			default = 100,
+			default = 7,	
 		},
 	},
 }

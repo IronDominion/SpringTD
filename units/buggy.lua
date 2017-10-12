@@ -1,14 +1,14 @@
-local unitName  =  "humvee"
+local unitName  =  "buggy"
 
 local unitDef  =  {
 --Internal settings
-    BuildPic = "humvee.bmp",
+    BuildPic = "buggy.bmp",
     Category = "TANK SMALL NOTAIR NOTSUB",
-    ObjectName = "humvee.s3o",
-    name = "Humvee",
-    Side = "GDI",
+    ObjectName = "buggy.s3o",
+    name = "Buggy",
+    Side = "Nod",
     TEDClass = "TANK",
-    UnitName = "humvee",
+    UnitName = "buggy",
     script = "humvee_script.lua",
     
 --Unit limitations and properties

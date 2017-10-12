@@ -1,14 +1,14 @@
-local unitName  =  "tank"
+local unitName  =  "medium_tank"
 
 local unitDef  =  {
 --Internal settings
-    BuildPic = "filename.bmp",
+    BuildPic = "medium_tank.bmp",
     Category = "TANK SMALL NOTAIR NOTSUB",
     ObjectName = "medium_tank.s3o",
     name = "Medium Tank",
     Side = "GDI",
     TEDClass = "TANK",
-    UnitName = "tank",
+    UnitName = "medium_tank",
     script = "medium_tank_script.lua",
     
 --Unit limitations and properties

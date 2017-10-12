@@ -1,22 +1,22 @@
-local unitName  =  "humvee"
+local unitName  =  "mlrs"
 
 local unitDef  =  {
 --Internal settings
-    BuildPic = "humvee.bmp",
+    BuildPic = "mrls.bmp",
     Category = "TANK SMALL NOTAIR NOTSUB",
-    ObjectName = "humvee.s3o",
-    name = "Humvee",
+    ObjectName = "mlrs.s3o",
+    name = "MLRS",
     Side = "GDI",
     TEDClass = "TANK",
-    UnitName = "humvee",
-    script = "humvee_script.lua",
+    UnitName = "mlrs",
+    script = "medium_tank_script.lua",
     
 --Unit limitations and properties
     BuildTime = 1000,
-    Description = "Light anti infantry vehicle.",
-    MaxDamage = 800,
+    Description = "Self-propelled Multiple Launch Rocket System",
+    MaxDamage = 1000,
     RadarDistance = 0,
-    SightDistance = 800,
+    SightDistance = 1000,
     SoundCategory = "TANK",
     Upright = 0,
     

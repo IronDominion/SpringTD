@@ -1,47 +1,51 @@
-local unitName  =  "humvee"
+local unitName  =  "orca"
 
 local unitDef  =  {
 --Internal settings
-    BuildPic = "humvee.bmp",
-    Category = "TANK SMALL NOTAIR NOTSUB",
-    ObjectName = "humvee.s3o",
-    name = "Humvee",
+    BuildPic = "orca.bmp",
+    Category = "GUNSHIP SMALL NOTAIR NOTSUB",
+    ObjectName = "orca.s3o",
+    name = "Orca",
     Side = "GDI",
     TEDClass = "TANK",
-    UnitName = "humvee",
-    script = "humvee_script.lua",
+    UnitName = "orca",
+    script = "orca.lua",
     
 --Unit limitations and properties
     BuildTime = 1000,
-    Description = "Light anti infantry vehicle.",
-    MaxDamage = 800,
+    Description = "Gunship",
+    MaxDamage = 1000,
     RadarDistance = 0,
-    SightDistance = 800,
+    SightDistance = 1000,
     SoundCategory = "TANK",
-    Upright = 0,
+	collide = true,
+	cruiseAlt = 150,
+	floater = true,
     
 --Energy and metal related
     BuildCostEnergy = 100,
     BuildCostMetal = 0,
     
 --Pathfinding and related
-    Acceleration = 0.15,
-    BrakeRate = 0.1,
+    Acceleration = 0.18,
+    BrakeRate = 0.16,
     FootprintX = 2,
     FootprintZ = 2,
     MaxSlope = 15,
-    MaxVelocity = 2.0,
-    MaxWaterDepth = 20,
+    MaxVelocity = 6.5,
     MovementClass = "Default2x2",
     TurnRate = 700,
     
 --Abilities
     Builder = 0,
+    CanFly = 1,
     CanAttack = 1,
     CanGuard = 1,
     CanMove = 1,
     CanPatrol = 1,
     CanStop = 1,
+	AirHoverFactor = 10,
+    HoverAttack = 1,
     LeaveTracks = 0,
     Reclaimable = 0,
     
@@ -68,7 +72,8 @@ local weaponDefs = {
 		name = "Orange Plasma Cannon",
 		weapontype = "Cannon",
 		accuracy = 10,
-		areaofeffect = 100,
+		bursts = 10,
+		areaofeffect = 10,
 		avoidfeature = false,
 		avoidfriendly = true,
 		canattackground = true,
@@ -86,16 +91,16 @@ local weaponDefs = {
 		size = 4,
 --        soundstart = "tank_fire",
         soundhit = "orangeblob_explo",
-		range = 450,
+		range = 750,
 		reloadtime = 1.5,
 		rgbcolor = "1.0 1.0 1.0",
-		turret = true,
+		turret = false,
 		texture1 = "flame",
 		weaponvelocity = 400,
 		explosiongenerator = "custom:TANKGUN_FX",
 		damage =
 		{
-			default = 100,
+			default = 25,
 		},
 	},
 }

@@ -2,9 +2,9 @@ local unitName  =  "mammoth_tank"
 
 local unitDef  =  {
 --Internal settings
-    BuildPic = "filename.bmp",
-    Category = "HEAVY TANK SMALL NOTAIR NOTSUB",
-    ObjectName = "4tnk.s3o",
+    BuildPic = "mammoth_tank.bmp",
+    Category = "TANK SMALL NOTAIR NOTSUB",
+    ObjectName = "mammoth_tank.s3o",
     name = "Mammoth Tank",
     Side = "GDI",
     TEDClass = "TANK",

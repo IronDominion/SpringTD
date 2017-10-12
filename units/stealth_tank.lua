@@ -1,22 +1,22 @@
-local unitName  =  "humvee"
+local unitName  =  "stealth_tank"
 
 local unitDef  =  {
 --Internal settings
-    BuildPic = "humvee.bmp",
+    BuildPic = "stealth_tank.bmp",
     Category = "TANK SMALL NOTAIR NOTSUB",
-    ObjectName = "humvee.s3o",
-    name = "Humvee",
-    Side = "GDI",
+    ObjectName = "stealth_tank.s3o",
+    name = "Stealth Tank",
+    Side = "Nod",
     TEDClass = "TANK",
-    UnitName = "humvee",
-    script = "humvee_script.lua",
+    UnitName = "stealth_tank",
+    script = "medium_tank_script.lua",
     
 --Unit limitations and properties
     BuildTime = 1000,
-    Description = "Light anti infantry vehicle.",
-    MaxDamage = 800,
+    Description = "Fast stealthed tank.",
+    MaxDamage = 1000,
     RadarDistance = 0,
-    SightDistance = 800,
+    SightDistance = 1000,
     SoundCategory = "TANK",
     Upright = 0,
     
