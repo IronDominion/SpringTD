@@ -61,6 +61,7 @@ local unitDef =
 		"nharvester",
 		"bike",
 		"buggy",
+		"flame_tank",
 		"light_tank",
 		"stealth_tank",
 	},
