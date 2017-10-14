@@ -9,7 +9,7 @@ local unitDef  =  {
     Side = "Nod",
     TEDClass = "TANK",
     UnitName = "flame_tank",
-    script = "medium_tank_script.lua",
+    script = "flame_tank_script.lua",
     
 --Unit limitations and properties
     BuildTime = 1000,
@@ -57,23 +57,28 @@ local unitDef  =  {
     NoChaseCategory = "AIR",
 
     weapons = {
-        [1] = {
-            def = "orangeblob",
-        },
+    	{
+    		def = "inferno",	
+    	},
+			{
+				def = "inferno",
+			},
     },
 }
 
 local weaponDefs = {
-    orangeblob = {
-		name = "Orange Plasma Cannon",
-		weapontype = "Cannon",
+    inferno = {
+		name = "Flame",
+		weapontype = "Flame",
 		accuracy = 10,
-		areaofeffect = 100,
+		--sprayangle = 100,
+		areaofeffect = 250,
+		--projectiles = 5,
 		avoidfeature = false,
 		avoidfriendly = true,
 		canattackground = true,
 		collidefriendly = true,
-		collisionsize = 8,
+		collisionsize = 4,
 		commandfire = false,
 		craterboost = 0,
 		cratermult = 0,
@@ -83,19 +88,19 @@ local weaponDefs = {
 		impulsefactor = 0,
 		intensity = 1,
 		noselfdamage = true,
-		size = 4,
+		size = 2,
 --        soundstart = "tank_fire",
         soundhit = "orangeblob_explo",
-		range = 450,
-		reloadtime = 1.5,
-		rgbcolor = "1.0 1.0 1.0",
+		range = 225,
+		reloadtime = 0.16,
+		rgbcolor = "1.0 0 0",
 		turret = true,
 		texture1 = "flame",
 		weaponvelocity = 400,
 		explosiongenerator = "custom:TANKGUN_FX",
 		damage =
 		{
-			default = 100,
+			default = 25,
 		},
 	},
 }

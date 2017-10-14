@@ -12,17 +12,17 @@ local unitDef  =  {
     script = "humvee_script.lua",
     
 --Unit limitations and properties
-    BuildTime = 1000,
+    BuildTime = 600,
     Description = "Light anti infantry vehicle.",
-    MaxDamage = 800,
+    MaxDamage = 300,
     RadarDistance = 0,
     SightDistance = 800,
     SoundCategory = "TANK",
     Upright = 0,
     
 --Energy and metal related
-    BuildCostEnergy = 100,
-    BuildCostMetal = 0,
+    BuildCostEnergy = 0,
+    BuildCostMetal = 300,
     
 --Pathfinding and related
     Acceleration = 0.15,
@@ -58,17 +58,17 @@ local unitDef  =  {
 
     weapons = {
         [1] = {
-            def = "orangeblob",
+            def = "machinegun",
         },
     },
 }
 
 local weaponDefs = {
-    orangeblob = {
-		name = "Orange Plasma Cannon",
+    machinegun = {
+		name = "Gattling Gun",
 		weapontype = "Cannon",
-		accuracy = 10,
-		areaofeffect = 100,
+		accuracy = 75,
+		areaofeffect = 10,
 		avoidfeature = false,
 		avoidfriendly = true,
 		canattackground = true,
@@ -83,12 +83,12 @@ local weaponDefs = {
 		impulsefactor = 0,
 		intensity = 1,
 		noselfdamage = true,
-		size = 4,
+		size = 1,
 --        soundstart = "tank_fire",
         soundhit = "orangeblob_explo",
 		range = 450,
-		reloadtime = 1.5,
-		rgbcolor = "1.0 1.0 1.0",
+		reloadtime = 0.1,
+		rgbcolor = "1.0 0 0",
 		turret = true,
 		texture1 = "flame",
 		weaponvelocity = 400,

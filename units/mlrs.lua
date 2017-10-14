@@ -9,12 +9,12 @@ local unitDef  =  {
     Side = "GDI",
     TEDClass = "TANK",
     UnitName = "mlrs",
-    script = "medium_tank_script.lua",
+    script = "rocket_launcher_script.lua",
     
 --Unit limitations and properties
-    BuildTime = 1000,
+    BuildTime = 1600,
     Description = "Self-propelled Multiple Launch Rocket System",
-    MaxDamage = 1000,
+    MaxDamage = 250,
     RadarDistance = 0,
     SightDistance = 1000,
     SoundCategory = "TANK",
@@ -22,7 +22,7 @@ local unitDef  =  {
     
 --Energy and metal related
     BuildCostEnergy = 100,
-    BuildCostMetal = 0,
+    BuildCostMetal = 800,
     
 --Pathfinding and related
     Acceleration = 0.15,
@@ -58,19 +58,22 @@ local unitDef  =  {
 
     weapons = {
         [1] = {
-            def = "orangeblob",
+            def = "mrlsrockets",
         },
     },
 }
 
 local weaponDefs = {
-    orangeblob = {
-		name = "Orange Plasma Cannon",
+    mrlsrockets = {
+		name = "rockets",
 		weapontype = "Cannon",
-		accuracy = 10,
+		burst = 12,
+		burstRate = 0.125,
+		accuracy = 500,
 		areaofeffect = 100,
+		sprayAngle = 50,
 		avoidfeature = false,
-		avoidfriendly = true,
+		avoidfriendly = false, --true
 		canattackground = true,
 		collidefriendly = true,
 		collisionsize = 8,
@@ -83,19 +86,21 @@ local weaponDefs = {
 		impulsefactor = 0,
 		intensity = 1,
 		noselfdamage = true,
+		highTrajectory = 1,
 		size = 4,
 --        soundstart = "tank_fire",
-        soundhit = "orangeblob_explo",
-		range = 450,
-		reloadtime = 1.5,
-		rgbcolor = "1.0 1.0 1.0",
+    soundhit = "orangeblob_explo",
+		range = 1200,
+		reloadtime = 7.5,
+		rgbcolor = "1.0 0 0",
 		turret = true,
 		texture1 = "flame",
-		weaponvelocity = 400,
+		weaponvelocity = 325,
 		explosiongenerator = "custom:TANKGUN_FX",
+		
 		damage =
 		{
-			default = 100,
+			default = 25,		
 		},
 	},
 }

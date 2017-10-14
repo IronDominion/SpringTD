@@ -9,7 +9,7 @@ local unitDef  =  {
     Side = "Nod",
     TEDClass = "TANK",
     UnitName = "stealth_tank",
-    script = "medium_tank_script.lua",
+    script = "stealth_tank_script.lua",
     
 --Unit limitations and properties
     BuildTime = 1000,
@@ -45,6 +45,11 @@ local unitDef  =  {
     LeaveTracks = 0,
     Reclaimable = 0,
     
+--Cloaking
+		canCloak = true,
+		initCloaked = true,
+		cloakTimeout = 128,
+    
 --Hitbox
 --    collisionVolumeOffsets    =  "0 0 0",
 --    collisionVolumeScales     =  "20 20 20",
@@ -58,19 +63,21 @@ local unitDef  =  {
 
     weapons = {
         [1] = {
-            def = "orangeblob",
+            def = "stealthmissiles",
         },
     },
 }
 
 local weaponDefs = {
-    orangeblob = {
-		name = "Orange Plasma Cannon",
-		weapontype = "Cannon",
+    stealthmissiles = {
+		name = "Stinger",
+		weapontype = "MissileLauncher",
+		burst = 2,
+		burstRate = 0.625,
 		accuracy = 10,
 		areaofeffect = 100,
 		avoidfeature = false,
-		avoidfriendly = true,
+		avoidfriendly = false, --true
 		canattackground = true,
 		collidefriendly = true,
 		collisionsize = 8,
@@ -85,17 +92,26 @@ local weaponDefs = {
 		noselfdamage = true,
 		size = 4,
 --        soundstart = "tank_fire",
-        soundhit = "orangeblob_explo",
-		range = 450,
-		reloadtime = 1.5,
+    soundhit = "orangeblob_explo",
+		range = 475,
+		reloadtime = 2.5,
 		rgbcolor = "1.0 1.0 1.0",
 		turret = true,
 		texture1 = "flame",
 		weaponvelocity = 400,
 		explosiongenerator = "custom:TANKGUN_FX",
+		
+		-- missile values
+		startVelocity = 1,
+		weaponAcceleration = 250,
+		tracks = true,
+		turnRate = 100,
+		trajectoryHeight = 0,
+		flightTime = 3000,
+		
 		damage =
 		{
-			default = 100,
+			default = 75,		
 		},
 	},
 }

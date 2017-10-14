@@ -12,7 +12,7 @@ local wheel_br = piece "wheel_br"
 local SIG_AIM = 2
 
 local RESTORE_DELAY = Spring.UnitScript.GetLongestReloadTime(unitID) * 2
-local wheelTurnSpeed = 1
+local wheelTurnSpeed = 2
 
 local ismoving
 
@@ -37,7 +37,7 @@ function script.AimWeapon(weaponID, heading, pitch)
 	Signal(SIG_AIM)
 	SetSignalMask(SIG_AIM)
     -- each time the Signal is called, all other functions with the same SignalMask will stop running. This makes sure the tank isn't trying to fire at something, and restore the turret position, at the same time.
-	Turn(turret, y_axis, heading, 3)
+	Turn(turret, y_axis, 3)
 	Turn(gun, x_axis, -pitch, math.rad(30))
 	WaitForTurn(turret, y_axis)
 	WaitForTurn(gun, x_axis)

@@ -9,22 +9,22 @@ local unitDef  =  {
     Side = "GDI",
     TEDClass = "TANK",
     UnitName = "orca",
-    script = "orca.lua",
+    script = "orca_script.lua",
     
 --Unit limitations and properties
-    BuildTime = 1000,
-    Description = "Gunship",
-    MaxDamage = 1000,
-    RadarDistance = 0,
-    SightDistance = 1000,
-    SoundCategory = "TANK",
-	collide = true,
-	cruiseAlt = 150,
-	floater = true,
+	  BuildTime = 2000,
+	  Description = "GDI gunship, equipped with double AGM missile launcher",
+	  MaxDamage = 300,
+	  RadarDistance = 0,
+	  SightDistance = 1000,
+	  SoundCategory = "TANK",
+		collide = true,
+		cruiseAlt = 150,
+		floater = true,
     
 --Energy and metal related
-    BuildCostEnergy = 100,
-    BuildCostMetal = 0,
+    BuildCostEnergy = 0,
+    BuildCostMetal = 1000,
     
 --Pathfinding and related
     Acceleration = 0.18,
@@ -44,7 +44,7 @@ local unitDef  =  {
     CanMove = 1,
     CanPatrol = 1,
     CanStop = 1,
-	AirHoverFactor = 10,
+		AirHoverFactor = 10,
     HoverAttack = 1,
     LeaveTracks = 0,
     Reclaimable = 0,
@@ -62,20 +62,21 @@ local unitDef  =  {
 
     weapons = {
         [1] = {
-            def = "orangeblob",
+            def = "orcarockets",
         },
     },
 }
 
 local weaponDefs = {
-    orangeblob = {
-		name = "Orange Plasma Cannon",
-		weapontype = "Cannon",
+	orcarockets = {
+		name = "Hellfire",
+		weapontype = "MissileLauncher",
+		burst = 2,
+		burstRate = 0.625,
 		accuracy = 10,
-		bursts = 10,
-		areaofeffect = 10,
+		areaofeffect = 50,
 		avoidfeature = false,
-		avoidfriendly = true,
+		avoidfriendly = false, --true
 		canattackground = true,
 		collidefriendly = true,
 		collisionsize = 8,
@@ -90,17 +91,26 @@ local weaponDefs = {
 		noselfdamage = true,
 		size = 4,
 --        soundstart = "tank_fire",
-        soundhit = "orangeblob_explo",
-		range = 750,
-		reloadtime = 1.5,
+    soundhit = "orangeblob_explo",
+		range = 475,
+		reloadtime = 2.5,
 		rgbcolor = "1.0 1.0 1.0",
-		turret = false,
+		turret = true,
 		texture1 = "flame",
 		weaponvelocity = 400,
 		explosiongenerator = "custom:TANKGUN_FX",
+		
+		-- missile values
+		startVelocity = 1,
+		weaponAcceleration = 250,
+		tracks = true,
+		turnRate = 100,
+		trajectoryHeight = 0,
+		flightTime = 3000,
+		
 		damage =
 		{
-			default = 25,
+			default = 75,		
 		},
 	},
 }

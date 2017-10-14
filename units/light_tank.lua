@@ -12,17 +12,17 @@ local unitDef  =  {
     script = "medium_tank_script.lua",
     
 --Unit limitations and properties
-    BuildTime = 1000,
+    BuildTime = 1400,
     Description = "Main battle unit of Nod.",
-    MaxDamage = 1000,
+    MaxDamage = 600,
     RadarDistance = 0,
     SightDistance = 1000,
     SoundCategory = "TANK",
     Upright = 0,
     
 --Energy and metal related
-    BuildCostEnergy = 100,
-    BuildCostMetal = 0,
+    BuildCostEnergy = 0,
+    BuildCostMetal = 700,
     
 --Pathfinding and related
     Acceleration = 0.15,
@@ -68,7 +68,7 @@ local weaponDefs = {
 		name = "Orange Plasma Cannon",
 		weapontype = "Cannon",
 		accuracy = 10,
-		areaofeffect = 100,
+		areaofeffect = 25,
 		avoidfeature = false,
 		avoidfriendly = true,
 		canattackground = true,
@@ -87,15 +87,15 @@ local weaponDefs = {
 --        soundstart = "tank_fire",
         soundhit = "orangeblob_explo",
 		range = 450,
-		reloadtime = 1.5,
+		reloadtime = 2,
 		rgbcolor = "1.0 1.0 1.0",
 		turret = true,
 		texture1 = "flame",
-		weaponvelocity = 400,
+		weaponvelocity = 1200,
 		explosiongenerator = "custom:TANKGUN_FX",
 		damage =
 		{
-			default = 100,
+			default = 50,
 		},
 	},
 }

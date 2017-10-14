@@ -9,20 +9,20 @@ local unitDef  =  {
     Side = "GDI",
     TEDClass = "TANK",
     UnitName = "sam",
-    script = "medium_tank_script.lua",
+    script = "sam_script.lua",
     
 --Unit limitations and properties
-    BuildTime = 1000,
+    BuildTime = 1600,
     Description = "Self-propelled Surface-To-Air Missile System.",
-    MaxDamage = 1000,
+    MaxDamage = 250,
     RadarDistance = 0,
     SightDistance = 1000,
     SoundCategory = "TANK",
     Upright = 0,
     
 --Energy and metal related
-    BuildCostEnergy = 100,
-    BuildCostMetal = 0,
+    BuildCostEnergy = 0,
+    BuildCostMetal = 800,
     
 --Pathfinding and related
     Acceleration = 0.15,
@@ -58,21 +58,23 @@ local unitDef  =  {
 
     weapons = {
         [1] = {
-            def = "orangeblob",
+            def = "sammissiles",
         },
     },
 }
 
 local weaponDefs = {
-    orangeblob = {
-		name = "Orange Plasma Cannon",
-		weapontype = "Cannon",
-		accuracy = 10,
+	sammissiles = {
+		name = "sammissiles",
+		weapontype = "MissileLauncher",
+		burst = 4,
+		burstRate = 0.625,
+		accuracy = 100,
 		areaofeffect = 100,
 		avoidfeature = false,
-		avoidfriendly = true,
+		avoidfriendly = false, --true
 		canattackground = true,
-		collidefriendly = true,
+		collidefriendly = false,
 		collisionsize = 8,
 		commandfire = false,
 		craterboost = 0,
@@ -85,17 +87,26 @@ local weaponDefs = {
 		noselfdamage = true,
 		size = 4,
 --        soundstart = "tank_fire",
-        soundhit = "orangeblob_explo",
-		range = 450,
-		reloadtime = 1.5,
-		rgbcolor = "1.0 1.0 1.0",
+    soundhit = "orangeblob_explo",
+		range = 750,
+		reloadtime = 2.5,
+		rgbcolor = "1.0 0 0",
 		turret = true,
 		texture1 = "flame",
 		weaponvelocity = 400,
 		explosiongenerator = "custom:TANKGUN_FX",
+		
+		-- missile values
+		startVelocity = 200,
+		weaponAcceleration = 100,
+		tracks = true,
+		turnRate = 30,
+		trajectoryHeight = 0,
+		flightTime = 3000,
+		
 		damage =
 		{
-			default = 100,
+			default = 50,		
 		},
 	},
 }

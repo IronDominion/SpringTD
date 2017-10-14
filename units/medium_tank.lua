@@ -68,7 +68,7 @@ local weaponDefs = {
 		name = "120mm",
 		weapontype = "Cannon",
 		accuracy = 10,
-		areaofeffect = 100,
+		areaofeffect = 25,
 		avoidfeature = false,
 		avoidfriendly = true,
 		canattackground = true,
@@ -91,7 +91,7 @@ local weaponDefs = {
 		rgbcolor = "1.0 1.0 1.0",
 		turret = true,
 		texture1 = "flame",
-		weaponvelocity = 400,
+		weaponvelocity = 1200,
 		explosiongenerator = "custom:TANKGUN_FX",
 		damage =
 		{

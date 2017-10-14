@@ -33,8 +33,18 @@ function script.AimWeapon(weaponID, heading, pitch)
 	return true
 end
 
-function script.FireWeapon(weaponID)
-	EmitSfx(flare, 0)
+--function script.FireWeapon(weaponID)
+	--EmitSfx(flare, 0)
+--end
+
+function script.Shot(weaponID) 
+	StartThread(Recoil)
+end
+
+function Recoil()
+	Move(gun, z_axis,  -7.5, 50)
+	Sleep(200)
+	Move(gun, z_axis,   0, 10)
 end
 
 function script.QueryWeapon() return flare end

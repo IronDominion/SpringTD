@@ -12,7 +12,7 @@ local unitDef  =  {
     script = "medium_tank_script.lua",
     
 --Unit limitations and properties
-    BuildTime = 1500,
+    BuildTime = 900,
     Description = "Armored personel carrier.",
     MaxDamage = 400,
     RadarDistance = 0,
@@ -22,7 +22,7 @@ local unitDef  =  {
     
 --Energy and metal related
     BuildCostEnergy = 0,
-    BuildCostMetal = 750,
+    BuildCostMetal = 450,
     
 --Pathfinding and related
     Acceleration = 0.20,
@@ -94,11 +94,11 @@ local weaponDefs = {
 		rgbcolor = "1.0 1.0 1.0",
 		turret = true,
 		texture1 = "flame",
-		weaponvelocity = 400,
+		weaponvelocity = 800,
 		explosiongenerator = "custom:TANKGUN_FX",
 		damage =
 		{
-			default = 7,	
+			default = 5,	
 		},
 	},
 }
