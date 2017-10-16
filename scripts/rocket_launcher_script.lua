@@ -29,6 +29,7 @@ end
 local function RestoreAfterDelay(unitID)
     -- defines a local funtion to wait a bit, then move the turret back to how it was originally.
 	Sleep(RESTORE_DELAY)
+	Move(turret, y_axis, 0, 3)
 	Turn(turret, y_axis, 0, math.rad(35))
 	Turn(gun, x_axis, 0, math.rad(30))
 end
@@ -37,9 +38,11 @@ function script.AimWeapon(weaponID, heading, pitch)
 	Signal(SIG_AIM)
 	SetSignalMask(SIG_AIM)
     -- each time the Signal is called, all other functions with the same SignalMask will stop running. This makes sure the tank isn't trying to fire at something, and restore the turret position, at the same time.
-	Turn(turret, y_axis, heading, math.rad(35))
-	Turn(gun, x_axis, -pitch, math.rad(30))
+  Move(turret, y_axis, 5, 3)
+  WaitForMove(turret, y_axis)
+	Turn(turret, y_axis, heading, math.rad(35))	
 	WaitForTurn(turret, y_axis)
+	Turn(gun, x_axis, -pitch, math.rad(30))
 	WaitForTurn(gun, x_axis)
 	StartThread(RestoreAfterDelay)
 	return true
