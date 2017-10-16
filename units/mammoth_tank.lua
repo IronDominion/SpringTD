@@ -60,6 +60,12 @@ local unitDef  =  {
 			{
 	     	def = "dual120mm",
 	    },
+	    {
+	    	def = "rocketpod",
+	    },
+	    {
+	    	def = "rocketpod",
+	    },
     },
 }
 
@@ -100,11 +106,9 @@ local weaponDefs = {
 			default = 75,		
 		},
 	},
-	rocketpods = {
+	rocketpod = {
 		name = "Mammoth Tusk",
 		weapontype = "MissileLauncher",
-		burst = 2,
-		burstRate = 0.625,
 		accuracy = 10,
 		areaofeffect = 100,
 		avoidfeature = false,
@@ -121,11 +125,11 @@ local weaponDefs = {
 		impulsefactor = 0,
 		intensity = 1,
 		noselfdamage = true,
-		size = 4,
+		size = 2,
 --        soundstart = "tank_fire",
     soundhit = "orangeblob_explo",
 		range = 475,
-		reloadtime = 2.5,
+		reloadtime = 4,
 		rgbcolor = "1.0 1.0 1.0",
 		turret = true,
 		texture1 = "flame",
@@ -133,15 +137,15 @@ local weaponDefs = {
 		explosiongenerator = "custom:TANKGUN_FX",
 		
 		-- missile values
-		startVelocity = 1,
+		startVelocity = 200,
 		weaponAcceleration = 5,
 		tracks = true,
-		turnRate = 2,
+		turnRate = 100,
 		trajectoryHeight = 2,
 		
 		damage =
 		{
-			default = 75,		
+			default = 15,		
 		},
 	},
 }
