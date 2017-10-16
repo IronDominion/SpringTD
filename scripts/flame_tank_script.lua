@@ -8,6 +8,7 @@ local flare_r = piece "flare_r"
 -- declares all the pieces we'll use in the script.
 
 local SIG_AIM = 2
+local SIG_AIM2 = 4
 
 local RESTORE_DELAY = Spring.UnitScript.GetLongestReloadTime(unitID) * 16
 -- picks a sensible time to wait before trying to turn the turret back to default.
@@ -22,7 +23,7 @@ local function RestoreAfterDelay(unitID)
 	Turn(turret, y_axis, 0, 3)
 end
 
-function script.AimWeapon(weaponID, heading, pitch)
+function script.AimWeapon1(heading, pitch)
 	Signal(SIG_AIM)
 	SetSignalMask(SIG_AIM)
     -- each time the Signal is called, all other functions with the same SignalMask will stop running. This makes sure the tank isn't trying to fire at something, and restore the turret position, at the same time.
@@ -32,12 +33,17 @@ function script.AimWeapon(weaponID, heading, pitch)
 	return true
 end
 
-function script.AimFromWeapon(num)
-	if num == 1 then
-		return gun_l
-	else 
-		return gun_r
-	end
+function script.AimWeapon2(heading, pitch)
+	Signal(SIG_AIM2)
+	SetSignalMask(SIG_AIM2)
+	return true
+end
+
+function script.AimFromWeapon1()
+		return turret
+end
+function script.AimFromWeapon2()
+		return turret
 end
 -- The unit looks from this piece down the QueryWeapon piece, to see whether it's aiming at anything.
 
@@ -45,12 +51,11 @@ end
 	--EmitSfx(flare, 0)
 --end
 
-function script.QueryWeapon(num)
-	if num == 1 then
+function script.QueryWeapon1()
 		return flare_l
-	else 
+end
+function script.QueryWeapon2()
 		return flare_r
-	end
 end
 -- The piece that the bullet/laser/whatever comes out of.
 

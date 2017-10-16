@@ -92,7 +92,7 @@ local weaponDefs = {
 --        soundstart = "tank_fire",
         soundhit = "orangeblob_explo",
 		range = 225,
-		reloadtime = 0.16,
+		reloadtime = 0.02,
 		rgbcolor = "1.0 0 0",
 		turret = true,
 		texture1 = "flame",
@@ -100,7 +100,7 @@ local weaponDefs = {
 		explosiongenerator = "custom:TANKGUN_FX",
 		damage =
 		{
-			default = 25,
+			default = 2,
 		},
 	},
 }
